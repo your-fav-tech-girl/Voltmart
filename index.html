@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>my-ts-project</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+
+  <body class="bg-white text-gray-900">
+    <!-- HEADER -->
+    <header
+      class="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-200"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"
+      >
+        <a href="#" class="flex items-center gap-2 font-semibold text-lg">
+          <span
+            class="inline-flex w-9 h-9 items-center justify-center rounded-xl bg-yellow-600 text-white"
+            >V</span
+          >
+          <span>VoltMart</span>
+        </a>
+
+        <nav
+          class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700"
+        >
+          <a href="#categories" class="hover:text-black transition"
+            >Categories</a
+          >
+          <a href="#featured" class="hover:text-black transition">Featured</a>
+          <a href="#why" class="hover:text-black transition">Why Us</a>
+          <a href="#newsletter" class="hover:text-black transition"
+            >Newsletter</a
+          >
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <!-- Search Input -->
+          <div
+            id="search"
+            type="search"
+            placeholder="Search products"
+            class="hidden sm:flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-200 bg-white shadow-sm focus-within:ring-2 focus-within:ring-black/10 transition"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4 text-gray-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-4.35-4.35M10 18a8 8 0 100-16 8 8 0 000 16z"
+              />
+            </svg>
+
+            <input
+              type="search"
+              placeholder="Search products..."
+              class="w-40 bg-transparent outline-none text-sm text-gray-700 placeholder-gray-400"
+            />
+          </div>
+
+          <button
+            class="px-4 py-2 rounded-xl bg-yellow-600 text-white hover:bg-gray-800 transition text-sm"
+          >
+            Shop Now
+          </button>
+          <button
+            id="cart-open"
+            class="relative w-11 h-11 flex items-center justify-center rounded-xl border border-gray-200 hover:bg-gray-50 transition"
+          >
+            <i data-lucide="shopping-cart" class="w-5 h-5 text-yellow-600"></i>
+
+            <span
+              id="cart-count"
+              class="absolute -top-2 -right-2 text-xs w-5 h-5 rounded-full bg-black text-white flex items-center justify-center"
+            >
+              0
+            </span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section
+      class="relative min-h-[80vh] flex items-center bg-cover bg-center"
+      style="
+        background-image: url(&quot;/assets/pexels-rohit-sharma-1230131-20259184.jpg&quot;);
+      "
+    >
+      <div class="absolute inset-0 bg-white/30"></div>
+      <div
+        class="absolute inset-0 bg-[radial-gradient(900px_400px_at_15%_10%,rgba(0,0,0,0.08),transparent_60%),#ffffff]"
+      ></div>
+
+      <div
+        class="relative max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center"
+      >
+        <div>
+          <span
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gray-200 bg-white text-xs"
+          >
+            Free shipping over $50
+          </span>
+
+          <h1 class="mt-6 text-4xl md:text-6xl font-extrabold tracking-tight">
+            Upgrade your tech,<br />
+            the smart way.
+          </h1>
+
+          <p class="mt-5 text-gray-600 text-lg max-w-xl">
+            Shop laptops, phones, audio gear, and accessories with fast delivery
+            and trusted quality.
+          </p>
+
+          <div class="mt-8 flex gap-3 flex-wrap">
+            <a
+              href="#featured"
+              class="px-6 py-3 rounded-xl bg-yellow-600 text-white hover:bg-gray-800 transition"
+            >
+              Explore Products
+            </a>
+            <a
+              href="#categories"
+              class="px-6 py-3 rounded-xl border border-gray-200 hover:bg-gray-50 transition"
+            >
+              Browse Categories
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <div
+      class="mt-20 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center"
+      id="trust-bar"
+    >
+      <div>
+        <p
+          class="text-3xl font-bold text-black"
+          data-target="10000"
+          data-suffix="+"
+        >
+          0
+        </p>
+        <p class="text-sm text-gray-500 mt-1">Orders delivered</p>
+      </div>
+
+      <div>
+        <p
+          class="text-3xl font-bold text-black"
+          data-target="4.8"
+          data-decimal="true"
+          data-suffix="★"
+        >
+          0
+        </p>
+        <p class="text-sm text-gray-500 mt-1">Customer rating</p>
+      </div>
+
+      <div>
+        <p
+          class="text-3xl font-bold text-black"
+          data-target="24"
+          data-suffix="/7"
+        >
+          0
+        </p>
+        <p class="text-sm text-gray-500 mt-1">Support availability</p>
+      </div>
+
+      <div>
+        <p
+          class="text-3xl font-bold text-black"
+          data-target="100"
+          data-suffix="%"
+        >
+          0
+        </p>
+        <p class="text-sm text-gray-500 mt-1">Secure checkout</p>
+      </div>
+    </div>
+
+    <!-- CATEGORIES -->
+    <section id="categories" class="max-w-7xl mx-auto px-6 py-20">
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="text-3xl font-bold">Shop by Category</h2>
+      </div>
+
+      <!-- scroll container -->
+      <div id="cat-track" class="flex gap-6 overflow-x-auto scroll-smooth pb-3">
+        <!-- item -->
+        <div class="flex flex-col items-center min-w-24">
+          <img
+            src="/assets/VM-Tech-Categories-Computing-and-Accessories-360x360.webp"
+            class="w-24 h-24 rounded-full object-cover border shadow-sm"
+            alt="Laptops"
+          />
+          <span class="mt-3 text-sm font-medium">Laptops</span>
+        </div>
+
+        <div class="flex flex-col items-center min-w-24">
+          <img
+            src="/assets/VM-Tech-Categories-Apple-360x360.webp"
+            class="w-24 h-24 rounded-full object-cover border shadow-sm"
+            alt="Phones"
+          />
+          <span class="mt-3 text-sm font-medium">Phones</span>
+        </div>
+        <div class="flex flex-col items-center min-w-24">
+          <img
+            src="/assets/VM-Tech-Categories-TV-and-Home-Theater-360x360.webp"
+            class="w-24 h-24 rounded-full object-cover border shadow-sm"
+            alt="Phones"
+          />
+          <span class="mt-3 text-sm font-medium">Home Theaters</span>
+        </div>
+        <div class="flex flex-col items-center min-w-24">
+          <img
+            src="/assets/VM-Tech-Categories-Tablet-and-Accessories-360x360.webp"
+            class="w-24 h-24 rounded-full object-cover border shadow-sm"
+            alt="Phones"
+          />
+          <span class="mt-3 text-sm font-medium">Phones</span>
+        </div>
+        <div class="flex flex-col items-center min-w-24">
+          <img
+            src="/assets/VM-Tech-Categories-Smart-Wearables-360x360 (1).webp"
+            class="w-24 h-24 rounded-full object-cover border shadow-sm"
+            alt="Phones"
+          />
+          <span class="mt-3 text-sm font-medium">Smart Watches</span>
+        </div>
+
+        <div class="flex flex-col items-center min-w-24">
+          <img
+            src="/assets/VM-Tech-Categories-Headphones-and-Audio-360x360.webp"
+            class="w-24 h-24 rounded-full object-cover border shadow-sm"
+            alt="Audio"
+          />
+          <span class="mt-3 text-sm font-medium">Headphone & Audio</span>
+        </div>
+
+        <div class="flex flex-col items-center min-w-24">
+          <img
+            src="/assets/VM-Tech-Categories-Camera-and-Accessories-360x360.webp"
+            class="w-24 h-24 rounded-full object-cover border shadow-sm"
+            alt="Accessories"
+          />
+          <span class="mt-3 text-sm font-medium">Cameras</span>
+        </div>
+
+        <div class="flex flex-col items-center min-w-24">
+          <img
+            src="/assets/VM-Tech-Categories-Drones-and-Accessories-360x360.webp"
+            class="w-24 h-24 rounded-full object-cover border shadow-sm"
+            alt="Gaming"
+          />
+          <span class="mt-3 text-sm font-medium">Drones</span>
+        </div>
+
+        <div class="flex flex-col items-center min-w-24">
+          <img
+            src="/assets/pexels-anna-nekrashevich-8533358.jpg"
+            class="w-24 h-24 rounded-full object-cover border shadow-sm"
+            alt="Tablets"
+          />
+          <span class="mt-3 text-sm font-medium">Tablets</span>
+        </div>
+
+        <div class="flex flex-col items-center min-w-24">
+          <img
+            src="/assets/VM-Icon-Categories-Deals-Tablets-Accessories-640x640-.webp"
+            class="w-24 h-24 rounded-full object-cover border shadow-sm"
+            alt="Cameras"
+          />
+          <span class="mt-3 text-sm font-medium">Cameras</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- BRANDS -->
+    <section id="brands" class="border-gray-100 bg-white">
+      <div class="max-w-7xl mx-auto px-6 py-16">
+        <div class="text-center mb-12">
+          <h2 class="text-2xl md:text-3xl font-bold text-black">
+            Trusted by Leading Brands
+          </h2>
+          <p class="mt-3 text-gray-600">
+            We stock products from the world’s most innovative tech companies.
+          </p>
+        </div>
+        <!-- Moving Brand Strip -->
+        <div class="relative overflow-hidden">
+          <div
+            class="flex gap-16 items-center w-max animate-marquee hover:[animation-play-state:paused]"
+          >
+            <!-- first set -->
+            <img
+              src="/assets/Apple-logo.webp"
+              alt="Apple"
+              class="h-15 opacity-80"
+            />
+
+            <img
+              src="/assets/256_144_2.avif"
+              alt="Samsung"
+              class="h-15 opacity-80"
+            />
+
+            <img src="/assets/images.png" alt="Sony" class="h-15 opacity-80" />
+
+            <img src="/assets/hp.jpg" alt="HP" class="h-15 opacity-80" />
+
+            <img src="/assets/images.jfif" alt="Dell" class="h-15 opacity-80" />
+
+            <img
+              src="/assets/images (3).png"
+              alt="Logitech"
+              class="h-15 opacity-80"
+            />
+
+            <img
+              src="/assets/images (2).png"
+              alt="Microsoft"
+              class="h-25 opacity-80"
+            />
+
+            <img src="/assets/Apple-logo.webp" alt="" class="h-14 opacity-80" />
+
+            <img src="/assets/256_144_2.avif" alt="" class="h-14 opacity-80" />
+
+            <img src="/assets/images.png" alt="" class="h-14 opacity-80" />
+
+            <img src="/assets/hp.jpg" alt="" class="h-14 opacity-80" />
+
+            <img src="/assets/images.jfif" alt="" class="h-14 opacity-80" />
+
+            <img src="/assets/images (3).png" alt="" class="h-14 opacity-80" />
+
+            <img src="/assets/images (2).png" alt="" class="h-16 opacity-80" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED -->
+    <section id="featured" class="bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6 py-20">
+        <h2 class="text-3xl font-bold mb-10">Featured Products</h2>
+        <div
+          id="products-grid"
+          class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+        ></div>
+        <p id="products-status" class="text-gray-500 mt-4"></p>
+      </div>
+    </section>
+
+    <!-- WHY US -->
+    <section id="why" class="max-w-7xl mx-auto px-6 py-20">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-black">
+          Why Choose VoltMart
+        </h2>
+        <p class="mt-3 text-gray-600 text-lg">
+          Premium tech, reliable delivery, and support that actually helps.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div
+          class="rounded-2xl border border-gray-200 bg-white p-7 shadow-sm hover:shadow-md transition"
+        >
+          <div
+            class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center text-2xl"
+          >
+            <i
+              data-lucide="battery-charging"
+              class="w-5 h-5 text-yellow-600"
+            ></i>
+          </div>
+          <h3 class="mt-5 text-xl font-semibold text-black">Fast Delivery</h3>
+          <p class="mt-2 text-gray-600 leading-relaxed">
+            Quick dispatch, careful packaging, and order updates from checkout
+            to delivery.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="rounded-2xl border border-gray-200 bg-white p-7 shadow-sm hover:shadow-md transition"
+        >
+          <div
+            class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center text-2xl"
+          >
+            <i data-lucide="lock" class="w-5 h-5 text-yellow-600"></i>
+          </div>
+          <h3 class="mt-5 text-xl font-semibold text-black">Secure Payments</h3>
+          <p class="mt-2 text-gray-600 leading-relaxed">
+            Safe checkout with trusted payment processing and privacy-first
+            handling of your data.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="rounded-2xl border border-gray-200 bg-white p-7 shadow-sm hover:shadow-md transition"
+        >
+          <div
+            class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center text-2xl"
+          >
+            <i data-lucide="message-circle" class="w-5 h-5 text-yellow-600"></i>
+          </div>
+          <h3 class="mt-5 text-xl font-semibold text-black">Quality Support</h3>
+          <p class="mt-2 text-gray-600 leading-relaxed">
+            Friendly support for questions, troubleshooting, and recommendations
+            before and after purchase.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="bg-gray-50 border-y border-gray-200">
+      <div class="max-w-7xl mx-auto px-6 py-24">
+        <!-- Heading -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-black">
+            What Our Customers Say
+          </h2>
+          <p class="mt-4 text-gray-600 text-lg">
+            Real reviews from people who upgraded their tech with VoltMart.
+          </p>
+        </div>
+
+        <!-- Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Testimonial 1 -->
+          <div
+            class="rounded-2xl bg-white border border-gray-200 p-7 shadow-sm hover:shadow-md transition"
+          >
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-12 h-12 rounded-full bg-black text-white flex items-center justify-center font-semibold"
+              >
+                J
+              </div>
+              <div>
+                <p class="font-semibold text-black">James K.</p>
+                <p class="text-sm text-gray-500">Software Engineer</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-1 mb-3 text-yellow-500">
+              ★ ★ ★ ★ ★
+            </div>
+
+            <p class="text-gray-700 leading-relaxed">
+              I ordered a laptop for work and it arrived the next day in perfect
+              condition. Super smooth checkout and excellent support!
+            </p>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div
+            class="rounded-2xl bg-white border border-gray-200 p-7 shadow-sm hover:shadow-md transition"
+          >
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-12 h-12 rounded-full bg-gray-800 text-white flex items-center justify-center font-semibold"
+              >
+                A
+              </div>
+              <div>
+                <p class="font-semibold text-black">Aisha M.</p>
+                <p class="text-sm text-gray-500">Content Creator</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-1 mb-3 text-yellow-500">
+              ★ ★ ★ ★ ★
+            </div>
+
+            <p class="text-gray-700 leading-relaxed">
+              The wireless earbuds are amazing quality for the price. Delivery
+              was fast and everything was well packaged. Definitely buying
+              again.
+            </p>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div
+            class="rounded-2xl bg-white border border-gray-200 p-7 shadow-sm hover:shadow-md transition"
+          >
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-12 h-12 rounded-full bg-gray-700 text-white flex items-center justify-center font-semibold"
+              >
+                R
+              </div>
+              <div>
+                <p class="font-semibold text-black">Ryan P.</p>
+                <p class="text-sm text-gray-500">Student</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-1 mb-3 text-yellow-500">
+              ★ ★ ★ ★ ☆
+            </div>
+
+            <p class="text-gray-700 leading-relaxed">
+              Great selection of accessories and competitive pricing. The
+              checkout process was simple and quick.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section id="newsletter" class="max-w-7xl mx-auto px-6 py-24">
+      <div
+        class="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 md:p-12 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8"
+      >
+        <div class="max-w-xl">
+          <h2 class="text-3xl md:text-4xl font-bold text-black">
+            Get deals in your inbox
+          </h2>
+          <p class="mt-3 text-gray-600 text-lg">
+            Subscribe for new arrivals, exclusive discounts, and tech tips — no
+            spam.
+          </p>
+
+          <div class="mt-6 flex flex-wrap gap-3 text-sm text-gray-600">
+            <span
+              class="px-3 py-1 rounded-full border border-gray-200 bg-gray-50"
+              >Weekly drops</span
+            >
+            <span
+              class="px-3 py-1 rounded-full border border-gray-200 bg-gray-50"
+              >Exclusive offers</span
+            >
+            <span
+              class="px-3 py-1 rounded-full border border-gray-200 bg-gray-50"
+              >New arrivals</span
+            >
+          </div>
+        </div>
+
+        <form class="w-full lg:w-auto">
+          <div class="flex flex-col sm:flex-row gap-3 w-full lg:w-130">
+            <input
+              type="email"
+              required
+              placeholder="Enter your email"
+              class="w-full px-4 py-3 rounded-xl border border-gray-200 shadow-sm focus:outline-none focus:border-gray-300"
+            />
+            <button
+              type="submit"
+              class="px-6 py-3 rounded-xl bg-black text-white font-medium hover:bg-gray-800 transition"
+            >
+              Subscribe
+            </button>
+          </div>
+
+          <p class="mt-3 text-xs text-gray-500">
+            By subscribing, you agree to receive emails from VoltMart.
+            Unsubscribe anytime.
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t">
+      <div
+        class="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between gap-4"
+      >
+        <p class="text-sm text-gray-600">
+          © 2026 VoltMart. All rights reserved.
+        </p>
+        <div class="flex gap-6 text-sm">
+          <a href="#" class="hover:underline">Privacy</a>
+          <a href="#" class="hover:underline">Terms</a>
+          <a href="#" class="hover:underline">Support</a>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+    <!-- CART BACKDROP -->
+    <div id="cart-backdrop" class="fixed inset-0 bg-black/40 hidden z-40"></div>
+
+    <!-- CART DRAWER -->
+    <aside
+      id="cart-drawer"
+      class="fixed top-0 right-0 h-full w-90 max-w-[92vw] bg-white border-l border-gray-200 shadow-2xl z-50 translate-x-full transition-transform duration-300"
+    >
+      <!-- header -->
+      <div
+        class="p-5 border-b border-gray-200 flex items-center justify-between"
+      >
+        <h3 class="font-semibold text-lg">Your Cart</h3>
+        <button
+          id="cart-close"
+          class="w-9 h-9 rounded-lg border border-gray-200 hover:bg-gray-50 transition flex items-center justify-center"
+        >
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <!-- items -->
+      <div
+        id="cart-items"
+        class="p-5 space-y-4 overflow-auto h-[calc(100%-170px)]"
+      >
+        <p class="text-gray-500 text-sm">Your cart is empty.</p>
+      </div>
+
+      <!-- footer -->
+      <div class="p-5 border-t border-gray-200">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-gray-600">Subtotal</span>
+          <span id="cart-subtotal" class="font-semibold">$0.00</span>
+        </div>
+
+        <button
+          class="w-full py-3 rounded-xl bg-black text-white hover:bg-gray-800 transition font-medium"
+        >
+          Checkout
+        </button>
+
+        <p class="mt-3 text-xs text-gray-500 text-center">
+          Shipping & taxes calculated at checkout.
+        </p>
+      </div>
+    </aside>
+
+    <!-- TOAST -->
+    <div
+      id="toast"
+      class="fixed bottom-6 right-6 z-60 hidden px-4 py-3 rounded-xl bg-black text-white text-sm shadow-lg"
+    >
+      Added to cart ✅
+    </div>
+  </body>
+</html>
