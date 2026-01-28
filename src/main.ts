@@ -2,6 +2,39 @@ import "./style.css";
 import { products, type Product } from "./data/product";
 declare const lucide: { createIcons: () => void };
 
+function initMobileMenu() {
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+
+  toggle?.addEventListener("click", () => {
+    if (!menu) return;
+
+    const isHidden = menu.classList.contains("hidden");
+    menu.classList.toggle("hidden", !isHidden);
+
+    toggle.setAttribute("aria-expanded", String(isHidden));
+  });
+
+  // Close menu when a link is clicked
+  menu?.querySelectorAll("a").forEach((a) => {
+    a.addEventListener("click", () => {
+      menu.classList.add("hidden");
+      toggle?.setAttribute("aria-expanded", "false");
+    });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  initMobileMenu();
+
+  // If you're using lucide:
+  // lucide.createIcons();
+});
+
+document.getElementById("checkout-btn")?.addEventListener("click", () => {
+  window.location.href = "/checkout.html";
+});
+
 function animateTrustBar() {
   const counters = document.querySelectorAll<HTMLElement>(
     "#trust-bar [data-target]",

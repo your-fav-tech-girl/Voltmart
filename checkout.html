@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout • VoltMart</title>
+  </head>
+
+  <body
+    class="bg-linear-to-br from-gray-50 via-white to-gray-100 text-gray-900"
+  >
+    <main class="min-h-screen flex items-center justify-center px-2 py-8">
+      <div class="w-full max-w-2xl gap-6 items-start">
+        <!-- LEFT: FORM -->
+        <section
+          class="bg-white/90 backdrop-blur rounded-3xl shadow-xl p-10 border border-gray-200"
+        >
+          <h1 class="text-3xl font-bold text-center tracking-tight">
+            Secure Checkout
+          </h1>
+          <p class="mt-2 text-sm text-gray-500 text-center">
+            Enter your details to complete your order.
+          </p>
+
+          <form id="checkout-form" class="mt-10 space-y-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700">
+                Full name
+              </label>
+              <input
+                required
+                name="name"
+                class="mt-2 w-full px-4 py-3.5 rounded-xl border border-gray-300 bg-gray-50/50 focus:bg-white focus:outline-none focus:ring-4 focus:ring-yellow-400/30 focus:border-yellow-500 transition"
+                placeholder="John Doe"
+              />
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-700">
+                  Email
+                </label>
+                <input
+                  required
+                  type="email"
+                  name="email"
+                  class="mt-2 w-full px-4 py-3.5 rounded-xl border border-gray-300 bg-gray-50/50 focus:bg-white focus:outline-none focus:ring-4 focus:ring-yellow-400/30 focus:border-yellow-500 transition"
+                  placeholder="you@example.com"
+                />
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-gray-700">
+                  Phone
+                </label>
+                <input
+                  required
+                  name="phone"
+                  class="mt-2 w-full px-4 py-3.5 rounded-xl border border-gray-300 bg-gray-50/50 focus:bg-white focus:outline-none focus:ring-4 focus:ring-yellow-400/30 focus:border-yellow-500 transition"
+                  placeholder="+234..."
+                />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700">
+                Address
+              </label>
+              <textarea
+                required
+                name="address"
+                rows="3"
+                class="mt-2 w-full px-4 py-3.5 rounded-xl border border-gray-300 bg-gray-50/50 focus:bg-white focus:outline-none focus:ring-4 focus:ring-yellow-400/30 focus:border-yellow-500 transition"
+                placeholder="Street, City, Country"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="mt-8 w-full py-4 rounded-xl bg-yellow-600 text-white hover:bg-yellow-700 active:scale-[0.98] transition font-semibold tracking-wide shadow-lg cursor-pointer"
+            >
+              Place Order
+            </button>
+
+            <p
+              id="checkout-status"
+              class="text-center text-sm text-gray-500"
+            ></p>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <script type="module" src="/src/checkout.ts"></script>
+  </body>
+</html>
