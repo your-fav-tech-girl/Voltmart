@@ -4,8 +4,6 @@ import { products } from "./data/product";
 type CartItem = { id: string; qty: number };
 const CART_KEY = "voltmart_cart_v1";
 const ORDERS_KEY = "voltmart_orders_v1";
-const btn = document.getElementById("place-order-btn");
-const status = document.getElementById("checkout-status");
 
 function loadCart(): CartItem[] {
   try {
@@ -84,16 +82,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (status)
       status.textContent = "Order placed successfully ✅ Redirecting...";
-    form.reset();
+
+    // ✅ redirect AFTER saving
+    window.location.href = "/summary.html";
   });
-});
-
-btn?.addEventListener("click", (e) => {
-  e.preventDefault(); // stop normal navigation
-
-  // 👉 run your checkout logic here
-  status!.textContent = "Processing order...";
-  
-  // go to summary page
-  window.location.href = "/summary.html";
 });
